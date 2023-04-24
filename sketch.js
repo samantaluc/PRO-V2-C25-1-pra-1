@@ -45,9 +45,7 @@ function draw() {
   image(towerImage,tower.position.x, tower.position.y, 160, 310);
   pop();
 
-
-
-  showBoats();
+  showBoats(); // C25
 
   for (var i = 0; i < balls.length; i++) {
     showCannonBalls(balls[i], i);
