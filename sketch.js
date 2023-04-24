@@ -5,8 +5,8 @@ const Constraint = Matter.Constraint;
 
 var engine, world, backgroundImg,boat;
 var canvas, angle, tower, ground, cannon;
-var balls = [];
-var boats = [];
+var balls = []; //matriz criada pra bolas C25
+var boats = []; //matriz criada pra barcos C25
 
 function preload() {
   backgroundImg = loadImage("./assets/background.gif");
@@ -72,6 +72,8 @@ function showCannonBalls(ball, index) {
 }
 
 function showBoats() {
+  //Nesta condição, verificamos se existem mais de 0 navios na matriz de navios. Senão,
+  //criamos um novo navio na condição else e o adicionamos na matriz boats. C25
   if (boats.length > 0) {
     if (
       boats[boats.length - 1] === undefined ||
@@ -83,6 +85,9 @@ function showBoats() {
 
       boats.push(boat);
     }
+//Dentro deste loop, usaremos outro condicional if para verificar se há um navio nesse
+//índice. Se houver, use a função Matter.Body.setVelocity() para definir a velocidade
+//deste navio específico e exibi-lo.
 
     for (var i = 0; i < boats.length; i++) {
       if (boats[i]) {
